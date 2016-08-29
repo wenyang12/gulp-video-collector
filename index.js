@@ -1,5 +1,6 @@
 /**
  * 搜寻页面上的视频
+ * <source src="xxx.mp4"></source>
  * @author luoying
  */
 
@@ -16,7 +17,7 @@ const collect = (html, options) => {
   let types = options.types.split(',');
   types = types.length > 1 ? `(?:${types.join('|')})` : types.join('');
 
-  let reg = new RegExp(`<source.*src=["|']?([^="']+\\.${types})["|']?.*>`, 'gi');
+  let reg = new RegExp(`<source.+src=["|']?([^"']+\\.${types})["|']?[^>]*\/?>`, 'gi');
   let matchs = getMatchs(html, reg);
   matchs.forEach(match => videos.indexOf(match[1]) === -1 && videos.push(match[1]));
   return videos;
@@ -24,7 +25,7 @@ const collect = (html, options) => {
 
 exports.collect = (options) => {
   options = Object.assign({
-    base: './',
+    base: '',
     types: ''
   }, options || {});
 
@@ -40,8 +41,8 @@ exports.collect = (options) => {
       try {
         let contents = fs.readFileSync(pathname);
         let file = new gutil.File({
-          base: base,
-          path: path.join(options.base, path.basename(video)),
+          base: options.base || base,
+          path: options.base ? 'videos/' + path.basename(video) : pathname,
           contents: contents
         });
         this.push(file);

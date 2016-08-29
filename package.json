@@ -1,6 +1,6 @@
 {
   "name": "@tools/gulp-video-collector",
-  "version": "1.0.0",
+  "version": "1.0.1",
   "description": "搜寻页面上的视频",
   "contributors": [
     "Luoying <luoying@fxiaoke.com>"
