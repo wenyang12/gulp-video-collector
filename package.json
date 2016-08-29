@@ -1,0 +1,30 @@
+{
+  "name": "@tools/gulp-video-collector",
+  "version": "1.0.0",
+  "description": "搜寻页面上的视频",
+  "contributors": [
+    "Luoying <luoying@fxiaoke.com>"
+  ],
+  "homepage": "http://registry-npm.firstshare.cn/",
+  "main": "index.js",
+  "scripts": {
+    "eslint": "eslint index.js"
+  },
+  "pre-commit": [
+    "eslint"
+  ],
+  "repository": {
+    "type": "git",
+    "url": "http://git.firstshare.cn/fe-tools/gulp-video-collector.git"
+  },
+  "author": "luoying",
+  "license": "ISC",
+  "devDependencies": {
+    "pre-commit": "^1.1.3"
+  },
+  "dependencies": {
+    "@tools/matchs": "^1.0.0",
+    "gulp-util": "^3.0.7",
+    "through2": "^2.0.1"
+  }
+}
