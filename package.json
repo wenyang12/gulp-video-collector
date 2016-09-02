@@ -1,6 +1,6 @@
 {
   "name": "@tools/gulp-video-collector",
-  "version": "1.0.1",
+  "version": "1.0.2",
   "description": "搜寻页面上的视频",
   "contributors": [
     "Luoying <luoying@fxiaoke.com>"
@@ -23,7 +23,7 @@
     "pre-commit": "^1.1.3"
   },
   "dependencies": {
-    "@tools/matchs": "^1.0.0",
+    "@tools/matchs": "^1.0.1",
     "gulp-util": "^3.0.7",
     "through2": "^2.0.1"
   }
